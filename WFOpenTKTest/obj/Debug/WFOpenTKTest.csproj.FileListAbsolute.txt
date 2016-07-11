@@ -9,3 +9,14 @@ d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\
 d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.csproj.GenerateResource.Cache
 d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.exe
 d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.pdb
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.exe.config
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.exe
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.pdb
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.dll
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.pdb
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.xml
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.csprojResolveAssemblyReference.cache
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.Properties.Resources.resources
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.csproj.GenerateResource.Cache
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.exe
+C:\Users\micha\Documents\Visual Studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.pdb

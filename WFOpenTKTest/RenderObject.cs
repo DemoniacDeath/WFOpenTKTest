@@ -88,7 +88,17 @@ namespace WFOpenTKTest
 
                 if (Math.Abs(ndotdR) > 0)
                 {
-                    return this;
+                    float t = -Vector3.Dot(normal,Verticies[0]-start) / ndotdR;
+                    Vector3 M = start + dR * t;
+
+                    Vector3 dMS1 = M - Verticies[0];
+                    float u = Vector3.Dot(dMS1,dS21);
+                    float v = Vector3.Dot(dMS1,dS31);
+
+                    // 4.
+                    if (u >= 0.0f && u <= dS21.Length
+                         && v >= 0.0f && v <= dS31.Length)
+                        return this;
                 }
             }
             foreach (RenderObject child in Children)
