@@ -76,11 +76,43 @@ namespace WFOpenTKTest
         {
             Vector3 position = Position + parentCoordinates;
 
+            Dictionary<float, RenderObject> hitObjects = new Dictionary<float, RenderObject>();
+
+            foreach (RenderObject child in Children)
+            {
+                float distance = child.FindHitDistance(start, end, child.Position + position);
+                if (distance != 0)
+                    hitObjects.Add(distance, child);
+            }
+
+            if (hitObjects.Keys.Count != 0)
+            {
+                float minDistance = 0;
+                foreach (KeyValuePair<float, RenderObject> hitObject in hitObjects)
+                {
+                    if (minDistance == 0 || hitObject.Key < minDistance)
+                        minDistance = hitObject.Key;
+                }
+                return hitObjects[minDistance];
+            }
+
+            foreach (RenderObject child in Children)
+            {
+                RenderObject hit = child.FindHit(start, end, position);
+                if (hit != null)
+                    return hit;
+            }
+
+            return null;
+        }
+
+        public float FindHitDistance(Vector3 start, Vector3 end, Vector3 position)
+        {
             if (Verticies != null && Verticies.Length == 4)
             {
-                Vector3 dS21 = position + (Verticies[1] - Verticies[0]);
-                Vector3 dS31 = position + (Verticies[3] - Verticies[0]);
-                Vector3 normal = Vector3.Cross(dS21, dS31);
+                Vector3 dS21 = (Verticies[1] - Verticies[0]);
+                Vector3 dS31 = (Verticies[3] - Verticies[0]);
+                Vector3 normal = Vector3.Normalize(Vector3.Cross(dS21, dS31));
 
                 Vector3 dR = end - start;
 
@@ -88,26 +120,19 @@ namespace WFOpenTKTest
 
                 if (Math.Abs(ndotdR) > 0)
                 {
-                    float t = -Vector3.Dot(normal,Verticies[0]-start) / ndotdR;
+                    float t = -Vector3.Dot(normal, start - (position + Verticies[0])) / ndotdR;
                     Vector3 M = start + dR * t;
 
-                    Vector3 dMS1 = M - Verticies[0];
-                    float u = Vector3.Dot(dMS1,dS21);
-                    float v = Vector3.Dot(dMS1,dS31);
+                    Vector3 dMS1 = M - (position + Verticies[0]);
+                    float u = Vector3.Dot(dMS1, Vector3.Normalize(dS21));
+                    float v = Vector3.Dot(dMS1, Vector3.Normalize(dS31));
 
-                    // 4.
                     if (u >= 0.0f && u <= dS21.Length
                          && v >= 0.0f && v <= dS31.Length)
-                        return this;
+                        return t;
                 }
             }
-            foreach (RenderObject child in Children)
-            {
-                RenderObject hit = child.FindHit(start, end, position);
-                if (hit != null)
-                    return hit;
-            }
-            return null;
+            return 0;
         }
     }
 }
