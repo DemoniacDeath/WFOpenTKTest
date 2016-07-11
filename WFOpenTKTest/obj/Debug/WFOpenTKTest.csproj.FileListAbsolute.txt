@@ -1,0 +1,11 @@
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.exe.config
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.exe
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\WFOpenTKTest.pdb
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.dll
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.pdb
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\bin\Debug\OpenTK.xml
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.csprojResolveAssemblyReference.cache
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.Properties.Resources.resources
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.csproj.GenerateResource.Cache
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.exe
+d:\demoniac\documents\visual studio 2015\Projects\WFOpenTKTest\WFOpenTKTest\obj\Debug\WFOpenTKTest.pdb
