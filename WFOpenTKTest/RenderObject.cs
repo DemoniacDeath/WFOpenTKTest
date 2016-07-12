@@ -110,25 +110,20 @@ namespace WFOpenTKTest
         {
             if (Verticies != null && Verticies.Length == 4)
             {
-                Vector3 dS21 = (Verticies[1] - Verticies[0]);
-                Vector3 dS31 = (Verticies[3] - Verticies[0]);
-                Vector3 normal = Vector3.Normalize(Vector3.Cross(dS21, dS31));
+                Vector3 normal = Vector3.Normalize(Vector3.Cross(Verticies[1] - Verticies[0], Verticies[3] - Verticies[0]));
 
-                Vector3 dR = end - start;
+                float intersectionDegree = Vector3.Dot(normal, end - start);
 
-                float ndotdR = Vector3.Dot(normal, dR);
-
-                if (Math.Abs(ndotdR) > 0)
+                if (Math.Abs(intersectionDegree) > 0)
                 {
-                    float t = -Vector3.Dot(normal, start - (position + Verticies[0])) / ndotdR;
-                    Vector3 M = start + dR * t;
+                    float t = -Vector3.Dot(normal, start - (position + Verticies[0])) / intersectionDegree;
+                    Vector3 M = start + (end - start) * t;
 
-                    Vector3 dMS1 = M - (position + Verticies[0]);
-                    float u = Vector3.Dot(dMS1, Vector3.Normalize(dS21));
-                    float v = Vector3.Dot(dMS1, Vector3.Normalize(dS31));
+                    float u = Vector3.Dot(M - (position + Verticies[0]), Vector3.Normalize(Verticies[1] - Verticies[0]));
+                    float v = Vector3.Dot(M - (position + Verticies[0]), Vector3.Normalize(Verticies[3] - Verticies[0]));
 
-                    if (u >= 0.0f && u <= dS21.Length
-                         && v >= 0.0f && v <= dS31.Length)
+                    if (u >= 0.0f && u <= (Verticies[1] - Verticies[0]).Length &&
+                        v >= 0.0f && v <= (Verticies[3] - Verticies[0]).Length)
                         return t;
                 }
             }
