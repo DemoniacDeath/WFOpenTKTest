@@ -40,14 +40,14 @@ namespace WFOpenTKTest
                 switch (Verticies.Length)
                 {
                     case 4:
-                        GL.Begin(PrimitiveType.Quads);
+                        GL.Begin(BeginMode.Quads);
                         break;
                     case 3:
-                        GL.Begin(PrimitiveType.Triangles);
+                        GL.Begin(BeginMode.Triangles);
                         break;
                     case 2:
                     default:
-                        GL.Begin(PrimitiveType.Lines);
+                        GL.Begin(BeginMode.Lines);
                         break;
                 }
                 foreach (Vector3 vector in Verticies)

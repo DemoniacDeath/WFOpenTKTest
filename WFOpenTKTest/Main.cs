@@ -75,7 +75,7 @@ namespace WFOpenTKTest
                     }
                 }
             }
-            this.MouseMove += new EventHandler<OpenTK.Input.MouseMoveEventArgs>((object sender, OpenTK.Input.MouseMoveEventArgs _e) =>
+            this.Mouse.Move += (object sender, OpenTK.Input.MouseMoveEventArgs _e) =>
             {
                 if (mouseLook)
                 {
@@ -85,8 +85,8 @@ namespace WFOpenTKTest
                     camera.RotationX += (float)dY / 5.0f;
                     camera.RotationY += (float)dX / 5.0f;
                 }
-            });
-            this.MouseDown += new EventHandler<MouseButtonEventArgs>((object sender, MouseButtonEventArgs _e) =>
+            };
+            this.Mouse.ButtonDown += (object sender, MouseButtonEventArgs _e) =>
             {
                 if (_e.Button == MouseButton.Left)
                     mouseLook = true;
@@ -106,20 +106,20 @@ namespace WFOpenTKTest
                         }
                     ));
                 }
-            });
-            this.MouseUp += new EventHandler<MouseButtonEventArgs>((object sender, MouseButtonEventArgs _e) =>
+            };
+            this.Mouse.ButtonUp += (object sender, MouseButtonEventArgs _e) =>
             {
                 if (_e.Button == MouseButton.Left)
                     mouseLook = false;
-            });
-            this.MouseWheel += new EventHandler<MouseWheelEventArgs>((object sender, MouseWheelEventArgs _e) =>
+            };
+            this.Mouse.WheelChanged += (object sender, MouseWheelEventArgs _e) =>
             {
                 camera.Z -= _e.Delta;
                 if (camera.Z < 15)
                     camera.Z = 15;
                 if (camera.Z > 100)
                     camera.Z = 100;
-            });
+            };
         }
 
         protected override void OnResize(EventArgs e)
